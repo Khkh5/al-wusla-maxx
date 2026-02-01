@@ -1,0 +1,585 @@
+/* Arabic Font Import - MUST BE FIRST */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap');
+
+/* Root Variables - Taqwa Teal Theme (Primary) */
+:root {
+  /* Core Colors */
+  --color-taqwa-teal: #008080;
+  --color-gold: #FFD700;
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+
+  /* Semantic Colors */
+  --color-background: #0A0E27;
+  --color-surface: #1A1F3A;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: rgba(255, 255, 255, 0.7);
+
+  /* Accent Colors */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--color-taqwa-teal), var(--color-gold));
+  --gradient-dark: linear-gradient(180deg, #0A0E27 0%, #1A1F3A 100%);
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+
+  /* Border Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
+
+  /* Typography */
+  --font-arabic: 'Noto Naskh Arabic', 'Traditional Arabic', serif;
+  --font-heading: 'Noto Kufi Arabic', 'Arial', sans-serif;
+  --font-body: 'Noto Naskh Arabic', 'Arial', sans-serif;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5);
+  --shadow-glow: 0 0 20px rgba(0, 128, 128, 0.5);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Global Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--gradient-dark);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  text-align: right;
+}
+
+/* App Container */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding: var(--spacing-lg);
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  margin-right: 250px;
+  /* Space for sidebar */
+  transition: margin 0.3s ease;
+}
+
+/* When nav is hidden, use full width */
+.app-container.nav-hidden .main-content {
+  margin-right: 0;
+}
+
+/* Nav Toggle Button */
+.nav-toggle-btn {
+  position: fixed;
+  top: 15px;
+  right: 260px;
+  z-index: 1001;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  background: rgba(26, 31, 58, 0.95);
+  color: #d4af37;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-toggle-btn:hover {
+  background: rgba(212, 175, 55, 0.2);
+  transform: scale(1.1);
+}
+
+.app-container.nav-hidden .nav-toggle-btn {
+  right: 15px;
+}
+
+/* Typography Styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+/* Divine Name Styling */
+.allah-name {
+  color: var(--color-gold);
+  font-weight: 700;
+  animation: divine-pulse 3s ease-in-out infinite;
+  display: inline-block;
+  transform-origin: center;
+}
+
+@keyframes divine-pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  }
+
+  50% {
+    transform: scale(1.05);
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+  }
+}
+
+/* Button Styles */
+.btn {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--radius-md);
+  border: none;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  color: var(--color-black);
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(0, 128, 128, 0.7);
+}
+
+/* Card Styles */
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Loading Animation */
+.loading {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(0, 128, 128, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--color-taqwa-teal);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.text-gold {
+  color: var(--color-gold);
+}
+
+.text-teal {
+  color: var(--color-taqwa-teal);
+}
+
+.mt-1 {
+  margin-top: var(--spacing-sm);
+}
+
+.mt-2 {
+  margin-top: var(--spacing-md);
+}
+
+.mt-3 {
+  margin-top: var(--spacing-lg);
+}
+
+.mb-1 {
+  margin-bottom: var(--spacing-sm);
+}
+
+.mb-2 {
+  margin-bottom: var(--spacing-md);
+}
+
+.mb-3 {
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-content {
+    padding: var(--spacing-md);
+    padding-bottom: 100px;
+    /* Space for bottom nav */
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+    min-height: 44px;
+    /* Touch target */
+  }
+
+  .card {
+    padding: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --spacing-lg: 1rem;
+    --spacing-xl: 1.5rem;
+  }
+
+  .main-content {
+    padding: 10px;
+    padding-bottom: 80px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Safe area for mobile notches */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .main-content {
+    padding-bottom: calc(80px + env(safe-area-inset-bottom));
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Touch-friendly interactions */
+@media (hover: none) and (pointer: coarse) {
+
+  .btn:active,
+  .card:active {
+    transform: scale(0.98);
+  }
+
+  .btn:hover {
+    transform: none;
+  }
+}
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Dark Mode Enforcement */
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   10 PSYCHOLOGICAL UX HOOKS - Color Grading & Hidden Triggers
+   By K. for Al-Wusla
+   ═══════════════════════════════════════════════════════════════ */
+
+/* 1. Progress Bar starts at 10% - Goal Gradient Effect */
+.progress-fill {
+  min-width: 10%;
+}
+
+/* 2. Pulsing elements draw attention - Urgency Hook */
+@keyframes attention-pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(212, 175, 55, 0);
+  }
+
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  }
+}
+
+.needs-attention {
+  animation: attention-pulse 2s infinite;
+}
+
+/* 3. Achievement unlock animation - Dopamine trigger */
+@keyframes unlock-celebration {
+  0% {
+    transform: scale(0) rotate(-10deg);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.3) rotate(5deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0);
+    opacity: 1;
+  }
+}
+
+.achievement-unlocked {
+  animation: unlock-celebration 0.6s ease;
+}
+
+/* 4. Social proof notification style - Herd Behavior */
+.social-proof {
+  background: rgba(16, 185, 129, 0.1);
+  border-left: 3px solid #10b981;
+  animation: slideInLeft 0.3s ease;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 5. Scarcity timer pulsing red - FOMO Effect */
+.scarcity-timer {
+  color: #ef4444;
+  animation: scarcity-pulse 1s infinite;
+}
+
+@keyframes scarcity-pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* 6. New feature badge - Curiosity Trigger */
+.new-feature {
+  position: relative;
+}
+
+.new-feature::after {
+  content: "جديد";
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: linear-gradient(135deg, #d4af37, #f5e7a3);
+  color: #1a1f3a;
+  font-size: 0.55rem;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-weight: bold;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* 7. Trust badges glow - Authority Effect */
+.trust-badge {
+  box-shadow: 0 0 15px rgba(0, 128, 128, 0.3);
+  border: 2px solid rgba(0, 128, 128, 0.5);
+  transition: all 0.3s;
+}
+
+.trust-badge:hover {
+  box-shadow: 0 0 25px rgba(0, 128, 128, 0.5);
+}
+
+/* 8. Near-completion urgency - Goal Gradient */
+.almost-done {
+  background: linear-gradient(90deg, #10b981 0%, #f59e0b 80%, #ef4444 100%);
+  background-size: 200% 100%;
+  animation: urgency-flow 2s linear infinite;
+}
+
+@keyframes urgency-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* 9. Reward sparkle effect - Variable Reward */
+.reward-sparkle::before {
+  content: "✨";
+  position: absolute;
+  animation: sparkle 0.5s ease-out;
+}
+
+@keyframes sparkle {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(2) translateY(-20px);
+  }
+}
+
+/* 10. Exit intent overlay - Loss Aversion */
+.exit-intent-overlay {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Streak counter scaling - Investment Bias */
+.streak-large {
+  font-size: 2rem;
+}
+
+.streak-mega {
+  font-size: 3rem;
+  color: #d4af37;
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+/* VIP Hour golden glow - Exclusivity */
+.vip-active {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(245, 231, 163, 0.1));
+  border: 2px solid rgba(212, 175, 55, 0.5);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+}

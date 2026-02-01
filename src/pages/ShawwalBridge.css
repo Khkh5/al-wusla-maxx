@@ -1,0 +1,383 @@
+.shawwal-page {
+    padding: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.shawwal-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.shawwal-header h1 {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.shawwal-header p {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Bridge Visual */
+.bridge-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 20px 0;
+}
+
+.island {
+    text-align: center;
+}
+
+.island span {
+    font-size: 2.5rem;
+    display: block;
+}
+
+.island p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    margin: 5px 0 0;
+}
+
+.ramadan-island {
+    color: #10b981;
+}
+
+.year-island {
+    color: #d4af37;
+}
+
+.bridge-tiles {
+    display: flex;
+    gap: 8px;
+}
+
+.bridge-tile {
+    width: 45px;
+    height: 45px;
+    background: rgba(212, 175, 55, 0.15);
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.bridge-tile:hover {
+    transform: translateY(-5px);
+    border-color: #d4af37;
+}
+
+.bridge-tile.complete {
+    background: linear-gradient(135deg, #d4af37, #f5e7a3);
+    border-color: #d4af37;
+}
+
+.tile-num {
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.bridge-tile.complete .tile-num {
+    color: #1a1f3a;
+}
+
+.tile-check {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #10b981;
+    color: white;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Progress */
+.bridge-progress {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.progress-bar {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #10b981, #d4af37);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+.progress-text {
+    color: #d4af37;
+    font-weight: bold;
+}
+
+/* Completion */
+.bridge-complete {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(16, 185, 129, 0.1));
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 25px;
+    border: 2px solid rgba(212, 175, 55, 0.4);
+    animation: glow 2s infinite;
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+    }
+}
+
+.complete-icon {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.bridge-complete h2 {
+    color: #d4af37;
+    margin-bottom: 10px;
+}
+
+.bridge-complete p {
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.badge-earned {
+    background: linear-gradient(135deg, #d4af37, #f5e7a3);
+    color: #1a1f3a;
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+/* Hadith */
+.shawwal-hadith {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 25px;
+    border-left: 3px solid #10b981;
+}
+
+.shawwal-hadith p {
+    color: rgba(255, 255, 255, 0.9);
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 10px;
+    font-family: 'Amiri', serif;
+}
+
+.shawwal-hadith span {
+    color: #10b981;
+    font-size: 0.85rem;
+}
+
+/* Habit Incubator */
+.habit-section {
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 2px solid rgba(139, 92, 246, 0.2);
+}
+
+.habit-section h2 {
+    color: #8b5cf6;
+    margin-bottom: 10px;
+}
+
+.habit-intro {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+.habits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.habit-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px 10px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.habit-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(139, 92, 246, 0.3);
+}
+
+.habit-card.selected {
+    background: rgba(139, 92, 246, 0.2);
+    border-color: #8b5cf6;
+}
+
+.habit-icon {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.habit-name {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.8rem;
+    display: block;
+}
+
+.habit-locked {
+    background: #10b981;
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Orbital */
+.orbital-section {
+    text-align: center;
+}
+
+.orbital-section h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.orbit-visual {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px;
+}
+
+.orbit-ring {
+    position: absolute;
+    inset: 0;
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: spin 60s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.orbit-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+}
+
+.orbit-earth {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    animation: orbit 10s linear infinite;
+}
+
+@keyframes orbit {
+    from {
+        transform: rotate(0deg) translateY(-90px) rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg) translateY(-90px) rotate(-360deg);
+    }
+}
+
+.orbit-countdown {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+}
+
+.orbit-countdown strong {
+    color: #d4af37;
+    font-size: 1.5rem;
+}
+
+.checkpoints {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.checkpoint {
+    text-align: center;
+    opacity: 0.5;
+}
+
+.checkpoint.active {
+    opacity: 1;
+}
+
+.checkpoint span {
+    display: block;
+    color: #d4af37;
+    font-weight: bold;
+}
+
+.checkpoint small {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.75rem;
+}
+
+@media (max-width: 480px) {
+    .habits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bridge-tiles {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

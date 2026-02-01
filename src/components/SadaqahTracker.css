@@ -1,0 +1,268 @@
+.sadaqah-page {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.sadaqah-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.sadaqah-header h1 {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.sadaqah-header p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Stats Row */
+.stats-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid transparent;
+}
+
+.stat-card.streak {
+    border-color: rgba(239, 68, 68, 0.3);
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.stat-card.total {
+    border-color: rgba(16, 185, 129, 0.3);
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.stat-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 5px;
+}
+
+/* Add Sadaqah */
+.add-sadaqah {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.add-sadaqah h3 {
+    color: var(--taqwa-teal);
+    margin-bottom: 15px;
+}
+
+/* Type Grid */
+.type-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.type-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.type-btn:hover,
+.type-btn.active {
+    background: rgba(20, 184, 166, 0.2);
+    border-color: var(--taqwa-teal);
+}
+
+.type-icon {
+    font-size: 1.5rem;
+}
+
+.type-name {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Amount Input */
+.amount-input {
+    display: flex;
+    gap: 10px;
+}
+
+.amount-input input {
+    flex: 1;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    font-size: 1rem;
+}
+
+.amount-input input:focus {
+    outline: none;
+    border-color: var(--taqwa-teal);
+}
+
+.add-btn {
+    padding: 12px 25px;
+    border-radius: 10px;
+    border: none;
+    background: var(--taqwa-teal);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Recent Donations */
+.recent-donations {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.recent-donations h3 {
+    color: var(--taqwa-teal);
+    margin-bottom: 15px;
+}
+
+.donations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.donation-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.donation-icon {
+    font-size: 1.5rem;
+}
+
+.donation-details {
+    flex: 1;
+}
+
+.donation-type {
+    display: block;
+    color: white;
+    font-weight: 600;
+}
+
+.donation-date {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.donation-amount {
+    font-size: 1.2rem;
+    color: #10b981;
+    font-weight: bold;
+}
+
+/* Hadith */
+.sadaqah-hadith {
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.hadith-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.hadith-source {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+}
+
+/* Types Info */
+.sadaqah-types-info {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.sadaqah-types-info h3 {
+    color: var(--taqwa-teal);
+    margin-bottom: 15px;
+}
+
+.sadaqah-types-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sadaqah-types-info li {
+    padding: 8px 0;
+    color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sadaqah-types-info li:last-child {
+    border-bottom: none;
+}
+
+.sadaqah-types-info li::before {
+    content: '✓ ';
+    color: #10b981;
+}
+
+@media (max-width: 480px) {
+    .type-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .stat-value {
+        font-size: 2rem;
+    }
+}

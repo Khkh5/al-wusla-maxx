@@ -1,0 +1,125 @@
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, var(--color-deep-night), var(--color-elevated-surface));
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 450px;
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-2xl);
+    box-shadow: var(--shadow-glow);
+    border: 1px solid rgba(0, 128, 128, 0.2);
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.auth-header .divine-name {
+    font-size: 3rem;
+    animation: divine-pulse 3s ease-in-out infinite;
+    margin-bottom: var(--spacing-md);
+}
+
+.auth-header h2 {
+    color: var(--color-taqwa-teal);
+    margin-bottom: var(--spacing-sm);
+    font-family: var(--font-arabic);
+}
+
+.auth-header .tagline {
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--color-text-primary);
+    font-size: 0.875rem;
+}
+
+.form-group input {
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    font-family: var(--font-arabic);
+    transition: all var(--transition-base);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--color-taqwa-teal);
+    box-shadow: 0 0 0 3px rgba(0, 128, 128, 0.1);
+}
+
+.form-group input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.error-message {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    color: #EF4444;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+.auth-form .btn {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.auth-footer {
+    margin-top: var(--spacing-xl);
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+}
+
+.auth-footer a {
+    color: var(--color-taqwa-teal);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-base);
+}
+
+.auth-footer a:hover {
+    color: var(--color-gold);
+}
+
+@media (max-width: 768px) {
+    .auth-card {
+        padding: var(--spacing-xl);
+    }
+
+    .auth-header .divine-name {
+        font-size: 2.5rem;
+    }
+}

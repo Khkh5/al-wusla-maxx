@@ -1,0 +1,285 @@
+.battle-page {
+    padding: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.battle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.battle-header h1 {
+    color: white;
+}
+
+.wins-counter {
+    background: linear-gradient(135deg, #d4af37, #f5e7a3);
+    color: #1a1f3a;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* Situation Card */
+.situation-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.situation-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.situation-card p {
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Battle Arena */
+.battle-arena {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.side {
+    padding: 20px;
+    border-radius: 15px;
+    transition: all 0.5s ease;
+}
+
+.devil-side {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(127, 29, 29, 0.1) 100%);
+    border: 2px solid rgba(239, 68, 68, 0.3);
+}
+
+.devil-side.winning {
+    border-color: #ef4444;
+    box-shadow: 0 0 30px rgba(239, 68, 68, 0.3);
+}
+
+.angel-side {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.1) 100%);
+    border: 2px solid rgba(16, 185, 129, 0.3);
+}
+
+.angel-side.winning {
+    border-color: #10b981;
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
+}
+
+.side-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.side-icon {
+    font-size: 1.5rem;
+}
+
+.side-header span:last-child {
+    font-weight: bold;
+    color: white;
+}
+
+.whisper {
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.devil-whisper {
+    color: rgba(239, 68, 68, 0.9);
+}
+
+.angel-whisper {
+    color: rgba(16, 185, 129, 0.9);
+}
+
+/* Battle Progress */
+.battle-progress {
+    position: relative;
+    padding: 15px 0;
+}
+
+.progress-bar {
+    height: 8px;
+    background: rgba(239, 68, 68, 0.3);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.angel-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #10b981, #34d399);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.progress-indicator {
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    transition: left 0.3s ease;
+}
+
+/* Action Buttons */
+.battle-actions {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.action-btn {
+    flex: 1;
+    padding: 15px;
+    border-radius: 12px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.devil-btn {
+    background: rgba(239, 68, 68, 0.2);
+    color: rgba(239, 68, 68, 0.8);
+    border: 2px solid rgba(239, 68, 68, 0.3);
+}
+
+.devil-btn:hover {
+    background: rgba(239, 68, 68, 0.3);
+}
+
+.angel-btn {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.angel-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 20px rgba(16, 185, 129, 0.4);
+}
+
+/* Victory Overlay */
+.victory-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.victory-content {
+    text-align: center;
+    animation: scaleIn 0.5s ease;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.5);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.victory-icon {
+    font-size: 5rem;
+    display: block;
+    margin-bottom: 20px;
+    animation: pulse 1s ease infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.victory-content h2 {
+    color: #10b981;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.victory-content p {
+    color: #d4af37;
+    font-size: 1.5rem;
+}
+
+/* 4th Wall Break */
+.fourth-wall {
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 3px solid #d4af37;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.fourth-wall p {
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Battle Badge */
+.battle-badge {
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.05));
+    border-radius: 10px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.battle-badge span {
+    color: #d4af37;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 480px) {
+    .battle-actions {
+        flex-direction: column;
+    }
+
+    .whisper {
+        font-size: 0.9rem;
+    }
+}

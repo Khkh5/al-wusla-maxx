@@ -1,0 +1,144 @@
+.avoid-page {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.avoid-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.avoid-header h1 {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.avoid-header p {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.categories-tabs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.cat-tab {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cat-tab:hover {
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.cat-tab.active {
+    background: rgba(239, 68, 68, 0.15);
+    border-color: #ef4444;
+}
+
+.cat-icon {
+    font-size: 1.2rem;
+}
+
+.avoid-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.avoid-card {
+    background: rgba(239, 68, 68, 0.08);
+    border-radius: 15px;
+    padding: 15px;
+    border: 2px solid rgba(239, 68, 68, 0.15);
+    display: flex;
+    gap: 12px;
+    transition: all 0.3s ease;
+}
+
+.avoid-card:hover {
+    border-color: rgba(239, 68, 68, 0.4);
+    transform: translateY(-3px);
+}
+
+.avoid-number {
+    width: 30px;
+    height: 30px;
+    background: #ef4444;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+.avoid-content h4 {
+    color: #ef4444;
+    margin: 0 0 10px 0;
+    font-size: 0.95rem;
+}
+
+.avoid-fix {
+    background: rgba(16, 185, 129, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.avoid-fix span {
+    color: #10b981;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.avoid-fix p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 5px 0 0 0;
+    font-size: 0.85rem;
+}
+
+.avoid-counter {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+}
+
+.avoid-counter span {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.avoid-counter strong {
+    color: #ef4444;
+    font-size: 2rem;
+    margin: 0 10px;
+}
+
+@media (max-width: 480px) {
+    .avoid-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .categories-tabs {
+        flex-direction: column;
+    }
+
+    .cat-tab {
+        justify-content: center;
+    }
+}

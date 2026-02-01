@@ -1,0 +1,172 @@
+.welcome-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a 0%, #1a1f3a 50%, #0f766e 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+}
+
+.skip-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.skip-btn:hover {
+    color: white;
+}
+
+.slide-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px;
+}
+
+.slide {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-visual {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.slide-icon {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+.slide h1 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.slide p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Features Grid */
+.features-preview {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin: 30px 0;
+    max-width: 400px;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 15px 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.feature-item span:first-child {
+    font-size: 1.5rem;
+}
+
+/* Dots */
+.slide-dots {
+    display: flex;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.dot.active {
+    background: #d4af37;
+    transform: scale(1.3);
+}
+
+/* Next Button */
+.next-btn {
+    padding: 15px 40px;
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(135deg, #d4af37, #f5e7a3);
+    color: #1a1f3a;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.next-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+}
+
+.user-greeting {
+    position: absolute;
+    bottom: 20px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+    .features-preview {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .slide h1 {
+        font-size: 1.5rem;
+    }
+
+    .slide-icon {
+        font-size: 4rem;
+    }
+}

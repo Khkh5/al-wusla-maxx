@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AL-WUSLA API Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: linear-gradient(135deg, #0f766e 0%, #06b6d4 100%);
+            color: white;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(0,0,0,0.3);
+            padding: 30px;
+            border-radius: 15px;
+        }
+        button {
+            background: #14b8a6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #0d9488;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            white-space: pre-wrap;
+            fontfamily: monospace;
+        }
+        .success { color: #10b981; }
+        .error { color: #ef4444; }
+        input {
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: none;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌙 AL-WUSLA API Testing</h1>
+        <p>Test backend connectivity and authentication</p>
+
+        <div>
+            <h3>1. Test Backend Connection</h3>
+            <button onclick="testBackend()">Test API</button>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <h3>2. Register New User</h3>
+            <input type="text" id="regUsername" placeholder="Username" value="testuser1" /><br/>
+            <input type="email" id="regEmail" placeholder="Email" value="test1@test.com" /><br/>
+            <input type="password" id="regPassword" placeholder="Password" value="password123" /><br/>
+            <button onclick="testRegister()">Register</button>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <h3>3. Login</h3>
+            <input type="email" id="loginEmail" placeholder="Email" value="test1@test.com" /><br/>
+            <input type="password" id="loginPassword" placeholder="Password" value="password123" /><br/>
+            <button onclick="testLogin()">Login</button>
+        </div>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:5000/api';
+        let authToken = null;
+
+        function log(message, type = 'info') {
+            const resultDiv = document.getElementById('result');
+            const className = type === 'error' ? 'error' : 'success';
+            resultDiv.innerHTML += `<div class="${className}">${new Date().toLocaleTimeString()}: ${message}</div>\n`;
+            console.log(message);
+        }
+
+        async function testBackend() {
+            try {
+                log('Testing backend connection...', 'info');
+                const response = await fetch(`${API_URL}/test`);
+                const data = await response.json();
+                log(`✅ Backend connected! Response: ${JSON.stringify(data)}`, 'success');
+            } catch (error) {
+                log(`❌ Backend connection failed: ${error.message}`, 'error');
+                log(`Make sure backend is running on port 5000`, 'error');
+            }
+        }
+
+        async function testRegister() {
+            const username = document.getElementById('regUsername').value;
+            const email = document.getElementById('regEmail').value;
+            const password = document.getElementById('regPassword').value;
+
+            try {
+                log(`Registering user: ${username}...`, 'info');
+                const response = await fetch(`${API_URL}/auth/register`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, email, password })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    log(`✅ Registration successful!`, 'success');
+                    log(`Token: ${data.token}`, 'success');
+                    log(`User: ${JSON.stringify(data.user)}`, 'success');
+                    authToken = data.token;
+                } else {
+                    log(`❌ Registration failed: ${data.error}`, 'error');
+                }
+            } catch (error) {
+                log(`❌ Registration error: ${error.message}`, 'error');
+            }
+        }
+
+        async function testLogin() {
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            try {
+                log(`Logging in as: ${email}...`, 'info');
+                const response = await fetch(`${API_URL}/auth/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    log(`✅ Login successful!`, 'success');
+                    log(`Token: ${data.token}`, 'success');
+                    log(`User: ${JSON.stringify(data.user)}`, 'success');
+                    authToken = data.token;
+                } else {
+                    log(`❌ Login failed: ${data.error}`, 'error');
+                }
+            } catch (error) {
+                log(`❌ Login error: ${error.message}`, 'error');
+            }
+        }
+
+        // Auto-test on load
+        window.onload = () => {
+            testBackend();
+        };
+    </script>
+</body>
+</html>

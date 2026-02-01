@@ -1,0 +1,306 @@
+.dashboard-page {
+    padding: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.dashboard-header h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 25px;
+}
+
+/* Level Section */
+.level-section {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(245, 231, 163, 0.1) 100%);
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.level-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.level-icon {
+    font-size: 3rem;
+}
+
+.level-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.level-name {
+    font-size: 1.5rem;
+    color: #d4af37;
+    font-weight: bold;
+}
+
+.level-hasanat {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.level-progress .progress-bar {
+    height: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.level-progress .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #d4af37, #f5e7a3);
+    border-radius: 6px;
+}
+
+.next-level {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+}
+
+.stat-card.quran {
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.stat-card.prayer {
+    border-color: rgba(20, 184, 166, 0.3);
+}
+
+.stat-card.fasting {
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.stat-card.sadaqah {
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.stat-card.dhikr {
+    border-color: rgba(245, 158, 11, 0.3);
+}
+
+.stat-card.khatmah {
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+.stat-icon {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 5px;
+}
+
+/* Weekly Section */
+.weekly-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.weekly-section h3 {
+    color: var(--taqwa-teal);
+    margin-bottom: 15px;
+}
+
+.weekly-chart {
+    display: flex;
+    justify-content: space-between;
+    height: 120px;
+    margin-bottom: 15px;
+}
+
+.day-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.day-bars {
+    display: flex;
+    gap: 3px;
+    align-items: flex-end;
+    height: 100px;
+}
+
+.bar {
+    width: 8px;
+    border-radius: 4px 4px 0 0;
+    transition: height 0.5s ease;
+}
+
+.bar.prayers {
+    background: var(--taqwa-teal);
+}
+
+.bar.quran {
+    background: #10b981;
+}
+
+.bar.dhikr {
+    background: #f59e0b;
+}
+
+.day-label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 8px;
+}
+
+.chart-legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.dot.prayers {
+    background: var(--taqwa-teal);
+}
+
+.dot.quran {
+    background: #10b981;
+}
+
+.dot.dhikr {
+    background: #f59e0b;
+}
+
+/* Goals Section */
+.goals-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.goals-section h3 {
+    color: var(--taqwa-teal);
+    margin-bottom: 15px;
+}
+
+.goals-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.goal-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.goal-name {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.goal-progress {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.goal-progress .progress-bar {
+    flex: 1;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.goal-progress .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--taqwa-teal), #10b981);
+    border-radius: 5px;
+}
+
+.goal-progress span {
+    color: var(--taqwa-teal);
+    font-weight: 600;
+    min-width: 40px;
+}
+
+/* Motivation */
+.motivation {
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+.motivation p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.motivation span {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-value {
+        font-size: 1.5rem;
+    }
+
+    .bar {
+        width: 6px;
+    }
+}

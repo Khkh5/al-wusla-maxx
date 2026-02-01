@@ -1,0 +1,254 @@
+.hadith-page {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hadith-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.hadith-header h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #0f766e 0%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hadith-header .subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+}
+
+/* Tabs */
+.library-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.library-tabs button {
+    padding: 12px 24px;
+    border: 2px solid var(--taqwa-teal);
+    background: transparent;
+    color: var(--taqwa-teal);
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.library-tabs button.active,
+.library-tabs button:hover {
+    background: var(--taqwa-teal);
+    color: white;
+}
+
+/* Daily Hadith */
+.daily-hadith-card {
+    background: linear-gradient(135deg, rgba(20, 184, 166, 0.2) 0%, rgba(6, 182, 212, 0.2) 100%);
+    border: 2px solid var(--taqwa-teal);
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.daily-badge {
+    background: var(--taqwa-teal);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    display: inline-block;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+}
+
+/* Category Filter */
+.category-filter {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.category-filter button {
+    padding: 6px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.category-filter button.active {
+    background: var(--taqwa-teal);
+    border-color: var(--taqwa-teal);
+}
+
+/* Hadith List */
+.hadith-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hadith-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    border-left: 4px solid var(--taqwa-teal);
+}
+
+.hadith-arabic {
+    font-size: 1.3rem;
+    line-height: 2;
+    color: white;
+    margin-bottom: 15px;
+    text-align: right;
+}
+
+.hadith-english {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.hadith-meta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hadith-source,
+.hadith-category {
+    font-size: 0.9rem;
+    color: var(--taqwa-teal);
+}
+
+/* Expert Tips */
+.expert-content h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--taqwa-teal);
+}
+
+.tips-section {
+    margin-bottom: 30px;
+}
+
+.tips-section h3 {
+    margin-bottom: 15px;
+    color: white;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+.tip-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.tip-card:hover {
+    border-color: var(--taqwa-teal);
+    transform: translateY(-3px);
+}
+
+.tip-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--taqwa-teal);
+    margin-bottom: 10px;
+}
+
+.tip-description {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.tip-source {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* PDF Resources */
+.resources-content h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--taqwa-teal);
+}
+
+.pdf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.pdf-card {
+    background: linear-gradient(135deg, rgba(20, 184, 166, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.pdf-card:hover {
+    border-color: var(--taqwa-teal);
+    transform: translateY(-5px);
+}
+
+.pdf-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.pdf-title {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.pdf-action {
+    color: var(--taqwa-teal);
+    font-weight: 600;
+}

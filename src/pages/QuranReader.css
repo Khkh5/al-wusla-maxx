@@ -1,0 +1,383 @@
+.quran-reader {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.quran-header {
+    background: linear-gradient(135deg, rgba(0, 128, 128, 0.2), rgba(255, 215, 0, 0.1));
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    border: 1px solid rgba(0, 128, 128, 0.3);
+}
+
+.header-content h1 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-size: 2.5rem;
+}
+
+.progress-display {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.progress-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+    color: var(--color-text-secondary);
+}
+
+.progress-bar {
+    height: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--gradient-primary);
+    transition: width 0.5s ease;
+    box-shadow: 0 0 20px rgba(0, 128, 128, 0.5);
+}
+
+.progress-percentage {
+    text-align: center;
+    margin-top: var(--spacing-sm);
+    font-weight: 700;
+    color: var(--color-gold);
+}
+
+/* Ramadan Highlights */
+.ramadan-highlights {
+    margin-bottom: var(--spacing-xl);
+}
+
+.ramadan-highlights h3 {
+    text-align: center;
+    color: var(--color-taqwa-teal);
+    margin-bottom: var(--spacing-lg);
+}
+
+.verses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.verse-card {
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    border: 2px solid transparent;
+}
+
+.pulse-verse {
+    animation: pulse-glow 3s ease-in-out infinite;
+    border-color: rgba(0, 128, 128, 0.3);
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 10px rgba(0, 128, 128, 0.3);
+        transform: scale(1);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(0, 128, 128, 0.6), 0 0 50px rgba(255, 215, 0, 0.3);
+        transform: scale(1.02);
+    }
+}
+
+.verse-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-taqwa-teal);
+    box-shadow: var(--shadow-glow);
+}
+
+.verse-meta {
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.verse-text {
+    font-size: 1.5rem;
+    line-height: 2;
+    margin-bottom: var(--spacing-md);
+    font-family: var(--font-arabic);
+    text-align: right;
+    direction: rtl;
+}
+
+.verse-action {
+    color: var(--color-taqwa-teal);
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+/* Reading Area */
+.reading-area {
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-2xl);
+}
+
+.page-display {
+    min-height: 400px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-number {
+    background: var(--gradient-primary);
+    color: var(--color-black);
+    padding: 0.5rem 1.5rem;
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* Quran Viewer - iframe embed */
+.quran-viewer {
+    width: 100%;
+    max-width: 800px;
+    height: 600px;
+    background: #f8f6ef;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border: 3px solid rgba(212, 175, 55, 0.3);
+}
+
+.quran-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #f8f6ef;
+}
+
+.quran-link {
+    margin-top: 15px;
+}
+
+.quran-link a {
+    color: #10b981;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.quran-link a:hover {
+    color: #d4af37;
+}
+
+.page-controls {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background: rgba(0, 128, 128, 0.2);
+    border-color: var(--color-taqwa-teal);
+}
+
+.btn-secondary:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* Hasanat Explosion */
+.hasanat-explosion {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.explosion-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.particle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    animation: explode 2s ease-out forwards;
+}
+
+.particle.gold {
+    background: radial-gradient(circle, #FFD700, #FFA500);
+    box-shadow: 0 0 20px #FFD700;
+}
+
+.particle.wheat {
+    background: radial-gradient(circle, #F5DEB3, #DAA520);
+    box-shadow: 0 0 30px #DAA520;
+    width: 30px;
+    height: 30px;
+}
+
+@keyframes explode {
+    0% {
+        transform: translate(-50%, -50%) rotate(var(--angle)) translateY(0) scale(0);
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(var(--angle)) translateY(var(--distance)) scale(1);
+        opacity: 0;
+    }
+}
+
+.explosion-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    animation: textPop 2s ease-out;
+}
+
+@keyframes textPop {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+
+    20% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+}
+
+.ayah {
+    font-size: 1.5rem;
+    color: var(--color-gold);
+    margin-bottom: var(--spacing-md);
+    font-family: var(--font-arabic);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.multiplier {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--color-taqwa-teal);
+    text-shadow: 0 0 20px rgba(0, 128, 128, 0.8);
+}
+
+.amount {
+    font-size: 2rem;
+    color: var(--color-white);
+    font-weight: 700;
+    margin-top: var(--spacing-sm);
+}
+
+.mega-multiplier .multiplier {
+    font-size: 4rem;
+    color: #FFD700;
+    animation: megaPulse 0.5s ease infinite;
+}
+
+@keyframes megaPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.encouragement-box {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: rgba(0, 128, 128, 0.1);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--color-taqwa-teal);
+    text-align: center;
+}
+
+.encouragement-box p {
+    margin: 0;
+    font-size: 1.125rem;
+}
+
+@media (max-width: 768px) {
+    .verses-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .explosion-container {
+        width: 300px;
+        height: 300px;
+    }
+
+    .ayah {
+        font-size: 1.125rem;
+    }
+
+    .multiplier {
+        font-size: 2rem;
+    }
+}

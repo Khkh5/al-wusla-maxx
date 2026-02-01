@@ -1,0 +1,340 @@
+.prayer-times-page {
+    padding: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+/* Header */
+.prayer-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.prayer-header h1 {
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.current-time-display {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--taqwa-teal);
+    font-family: 'Courier New', monospace;
+}
+
+.loading-text {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+}
+
+/* Next Prayer Card */
+.next-prayer-card {
+    background: linear-gradient(135deg, rgba(20, 184, 166, 0.2) 0%, rgba(6, 182, 212, 0.1) 100%);
+    border: 2px solid var(--taqwa-teal);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.next-prayer-card h3 {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.next-prayer-name {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.countdown-display {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--taqwa-teal);
+    font-family: 'Courier New', monospace;
+}
+
+/* Notification Section */
+.notification-section {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.btn-notification {
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: 2px solid var(--taqwa-teal);
+    background: transparent;
+    color: var(--taqwa-teal);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-notification:hover,
+.btn-notification.enabled {
+    background: var(--taqwa-teal);
+    color: white;
+}
+
+/* Prayer List */
+.prayer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.prayer-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 15px;
+    border-left: 4px solid var(--prayer-color, var(--taqwa-teal));
+    transition: all 0.3s ease;
+}
+
+.prayer-item.next-prayer {
+    background: rgba(20, 184, 166, 0.15);
+    border-left-width: 6px;
+    transform: scale(1.02);
+}
+
+.prayer-item.ramadan-special {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(245, 231, 163, 0.05) 100%);
+    border-left-color: #d4af37;
+}
+
+.prayer-icon-large {
+    font-size: 2rem;
+    min-width: 50px;
+    text-align: center;
+}
+
+.prayer-details {
+    flex: 1;
+}
+
+.prayer-details h3 {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.prayer-time-large {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--taqwa-teal);
+    font-family: 'Courier New', monospace;
+}
+
+.ramadan-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 10px;
+    background: rgba(212, 175, 55, 0.2);
+    color: #d4af37;
+    font-size: 0.75rem;
+    margin-top: 5px;
+}
+
+.prayer-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.btn-check-in {
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 2px solid var(--taqwa-teal);
+    background: transparent;
+    color: var(--taqwa-teal);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-check-in:hover {
+    background: var(--taqwa-teal);
+    color: white;
+}
+
+/* Mosque Sync */
+.mosque-sync-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.mosque-sync-section h3 {
+    color: var(--taqwa-teal);
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.mosque-sync-section p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+.sync-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.sync-controls button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid var(--taqwa-teal);
+    background: transparent;
+    color: var(--taqwa-teal);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sync-controls button:hover {
+    background: var(--taqwa-teal);
+    color: white;
+}
+
+.offset-display {
+    min-width: 80px;
+    text-align: center;
+    color: white;
+    font-size: 1.1rem;
+}
+
+/* Streaks */
+.streaks-display {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.streaks-display h3 {
+    color: var(--taqwa-teal);
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.streaks-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.streak-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    flex: 1;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+}
+
+.streak-icon {
+    font-size: 1.5rem;
+}
+
+.streak-count {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.streak-label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Golden Hour */
+.golden-hour {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(255, 165, 0, 0.1) 100%);
+    border: 2px solid #d4af37;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+.golden-hour h3 {
+    color: #d4af37;
+    margin-bottom: 5px;
+}
+
+.golden-hour p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    .prayer-times-page {
+        padding: 10px;
+    }
+
+    .prayer-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .current-time-display {
+        font-size: 2rem;
+    }
+
+    .countdown-display {
+        font-size: 2.5rem;
+    }
+
+    .prayer-item {
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .prayer-icon-large {
+        font-size: 1.5rem;
+        min-width: 40px;
+    }
+
+    .prayer-details h3 {
+        font-size: 1rem;
+    }
+
+    .prayer-time-large {
+        font-size: 1.1rem;
+    }
+
+    .btn-check-in {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .streaks-grid {
+        gap: 5px;
+    }
+
+    .streak-card {
+        padding: 8px;
+    }
+
+    .streak-count {
+        font-size: 1.2rem;
+    }
+}

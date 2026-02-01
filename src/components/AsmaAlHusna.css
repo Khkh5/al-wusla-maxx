@@ -1,0 +1,137 @@
+.asma-page {
+    padding: 15px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.asma-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.asma-header h1 {
+    font-size: 2rem;
+    color: #d4af37;
+    margin-bottom: 10px;
+}
+
+.asma-header p {
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+    font-family: 'Amiri', serif;
+}
+
+/* Search */
+.asma-search {
+    margin-bottom: 20px;
+}
+
+.asma-search input {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    font-size: 1rem;
+}
+
+.asma-search input:focus {
+    outline: none;
+    border-color: #d4af37;
+}
+
+/* Names Grid */
+.names-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.name-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.name-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+.name-card.selected {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(245, 231, 163, 0.1) 100%);
+    border-color: #d4af37;
+}
+
+.name-number {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 5px;
+}
+
+.name-arabic {
+    font-size: 1.5rem;
+    color: #d4af37;
+    margin-bottom: 5px;
+    font-family: 'Amiri', 'Traditional Arabic', serif;
+}
+
+.name-transliteration {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.name-meaning {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.75rem;
+    color: var(--taqwa-teal);
+}
+
+/* Hadith */
+.names-hadith {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    border-left: 4px solid #d4af37;
+}
+
+.names-hadith p {
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+
+.names-hadith span {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    .names-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 8px;
+    }
+
+    .name-card {
+        padding: 10px;
+    }
+
+    .name-arabic {
+        font-size: 1.2rem;
+    }
+
+    .name-transliteration {
+        font-size: 0.7rem;
+    }
+}

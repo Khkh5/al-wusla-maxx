@@ -1,0 +1,405 @@
+.health-page {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.health-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.health-header h1 {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.health-header p {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Fasting Meter */
+.fasting-meter {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.1) 100%);
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 2px solid rgba(16, 185, 129, 0.3);
+}
+
+.meter-display {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.hours-big {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #10b981;
+    display: block;
+}
+
+.hours-label {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.meter-bar {
+    height: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.meter-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #10b981, #34d399, #fbbf24);
+    border-radius: 10px;
+    transition: width 1s ease;
+    position: relative;
+}
+
+.autophagy-marker {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: pulse 1s infinite;
+}
+
+.meter-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+}
+
+/* Bio Hacks Grid */
+.biohacks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.biohack-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.biohack-card.active {
+    border-color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.hack-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.biohack-card h3 {
+    color: white;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.hack-desc {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+}
+
+.hack-status {
+    font-size: 0.8rem;
+}
+
+.status-active {
+    color: #10b981;
+}
+
+.status-pending {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Hydration */
+.hydration-section {
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 2px solid rgba(59, 130, 246, 0.3);
+}
+
+.hydration-section h2 {
+    color: #3b82f6;
+    margin-bottom: 10px;
+}
+
+.hydration-tip {
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.water-cups {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.cup {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(59, 130, 246, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.4;
+}
+
+.cup.filled {
+    opacity: 1;
+    background: #3b82f6;
+    animation: ripple 0.5s ease;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0.8);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.cups-count {
+    text-align: center;
+    color: #3b82f6;
+    margin-top: 10px;
+}
+
+/* Sleep Calculator */
+.sleep-section {
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 2px solid rgba(139, 92, 246, 0.3);
+}
+
+.sleep-section h2 {
+    color: #8b5cf6;
+    margin-bottom: 10px;
+}
+
+.sleep-tip {
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.sleep-times {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.sleep-time-card {
+    background: rgba(139, 92, 246, 0.2);
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    min-width: 100px;
+}
+
+.cycle-count {
+    display: block;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8rem;
+}
+
+.sleep-at {
+    display: block;
+    color: #8b5cf6;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.hours-sleep {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+}
+
+.qailula-tip {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.qailula-tip span {
+    font-size: 1.5rem;
+}
+
+.qailula-tip p {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Myth Busters */
+.myths-section {
+    margin-bottom: 25px;
+}
+
+.myths-section h2 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+.myth-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.myth-side,
+.truth-side {
+    padding: 15px;
+}
+
+.myth-side {
+    background: rgba(239, 68, 68, 0.15);
+}
+
+.truth-side {
+    background: rgba(16, 185, 129, 0.15);
+}
+
+.myth-label {
+    color: #ef4444;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.8rem;
+}
+
+.truth-label {
+    color: #10b981;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.8rem;
+}
+
+.myth-side p,
+.truth-side p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+}
+
+/* Food Sequence */
+.food-sequence {
+    background: rgba(251, 191, 36, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    border: 2px solid rgba(251, 191, 36, 0.3);
+}
+
+.food-sequence h2 {
+    color: #fbbf24;
+    margin-bottom: 5px;
+}
+
+.food-sequence>p {
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 15px;
+}
+
+.sequence-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.step {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    min-width: 80px;
+}
+
+.step-num {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: #fbbf24;
+    color: #1a1f3a;
+    border-radius: 50%;
+    margin: 0 auto 8px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    line-height: 24px;
+}
+
+.step-icon {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.step span:last-child {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.8rem;
+}
+
+.step-arrow {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 1.5rem;
+}
+
+@media (max-width: 480px) {
+    .myth-card {
+        grid-template-columns: 1fr;
+    }
+
+    .biohacks-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sequence-steps {
+        flex-direction: column;
+    }
+
+    .step-arrow {
+        transform: rotate(90deg);
+    }
+}

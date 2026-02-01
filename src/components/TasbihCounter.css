@@ -1,0 +1,269 @@
+.tasbih-page {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tasbih-header h1 {
+    font-size: 2rem;
+    color: white;
+}
+
+.tasbih-header p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 25px;
+}
+
+/* Dhikr Selector */
+.dhikr-selector {
+    margin-bottom: 25px;
+    overflow-x: auto;
+}
+
+.dhikr-tabs {
+    display: flex;
+    gap: 8px;
+    padding: 10px 0;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.dhikr-tab {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.85rem;
+}
+
+.dhikr-tab:hover {
+    border-color: var(--taqwa-teal);
+}
+
+.dhikr-tab.active {
+    background: var(--taqwa-teal);
+    border-color: var(--taqwa-teal);
+    color: white;
+}
+
+/* Current Dhikr */
+.current-dhikr {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.dhikr-arabic {
+    font-size: 2.2rem;
+    color: white;
+    margin-bottom: 10px;
+    font-family: 'Amiri', 'Traditional Arabic', serif;
+}
+
+.dhikr-transliteration {
+    color: var(--taqwa-teal);
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.dhikr-meaning {
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.dhikr-reward {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(245, 231, 163, 0.1) 100%);
+    padding: 12px 20px;
+    border-radius: 10px;
+    color: #d4af37;
+    font-size: 0.95rem;
+}
+
+/* Counter Section */
+.counter-section {
+    margin-bottom: 25px;
+}
+
+.counter-ring {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 15px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.counter-ring:active {
+    transform: scale(0.95);
+}
+
+.counter-ring svg {
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+}
+
+.counter-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-width: 8;
+}
+
+.counter-progress {
+    fill: none;
+    stroke: var(--taqwa-teal);
+    stroke-width: 8;
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.3s ease;
+}
+
+.counter-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.count-number {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: white;
+    display: block;
+}
+
+.count-target {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.tap-hint {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+}
+
+/* Target Selector */
+.target-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.target-selector>span {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.target-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.target-btn {
+    width: 50px;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.target-btn:hover,
+.target-btn.active {
+    background: var(--taqwa-teal);
+    border-color: var(--taqwa-teal);
+}
+
+/* Controls */
+.tasbih-controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.reset-btn,
+.vibrate-btn {
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+    background: rgba(255, 100, 100, 0.2);
+    border-color: #ff6464;
+}
+
+.vibrate-btn.active {
+    background: rgba(20, 184, 166, 0.2);
+    border-color: var(--taqwa-teal);
+}
+
+/* Today Stats */
+.today-stats {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.today-stats h3 {
+    color: var(--taqwa-teal);
+    margin-bottom: 15px;
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Expert Tip */
+.expert-tip {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 15px;
+    border-left: 4px solid var(--taqwa-teal);
+    text-align: left;
+}
+
+.expert-tip h4 {
+    color: var(--taqwa-teal);
+    margin-bottom: 8px;
+}
+
+.expert-tip p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}

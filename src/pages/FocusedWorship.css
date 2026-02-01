@@ -1,0 +1,255 @@
+/* FocusedWorship.css / Ghar Hira */
+
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap');
+
+.focus-cave-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s ease-in-out;
+    padding: 20px;
+    font-family: 'Amiri', serif;
+}
+
+/* MODES */
+.focus-cave-container.cave {
+    background: #050505;
+    color: #e5e5e5;
+}
+
+.focus-cave-container.light {
+    background: #1c1917;
+    color: #fbbf24;
+}
+
+/* ACTIVE SESSION - IMMERSIVE */
+.focus-cave-container.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    cursor: none;
+    /* Hide cursor for immersion */
+}
+
+/* Animations */
+@keyframes breathing {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.6;
+    }
+}
+
+.breathing-circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    position: absolute;
+    animation: breathing 8s infinite ease-in-out;
+}
+
+/* SETUP SCREEN */
+.cave-setup {
+    text-align: center;
+    max-width: 500px;
+    animation: fadeIn 1s ease;
+}
+
+.cave-icon {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.1));
+}
+
+.cave-setup h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+}
+
+.cave-subtitle {
+    opacity: 0.7;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+/* Selectors */
+.duration-selector,
+.mode-selector {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.duration-selector button {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: inherit;
+    padding: 10px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1.1rem;
+}
+
+.duration-selector button.selected {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: currentColor;
+    transform: scale(1.05);
+}
+
+.mode-selector label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+.mode-selector label:hover,
+.mode-selector input:checked+span {
+    opacity: 1;
+}
+
+.mode-selector input {
+    display: none;
+}
+
+.psych-hook-text {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    color: #fca5a5;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+.enter-cave-btn {
+    background: linear-gradient(135deg, #374151 0%, #111827 100%);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.5s;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.enter-cave-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+    background: linear-gradient(135deg, #4b5563 0%, #1f2937 100%);
+}
+
+/* ACTIVE SESSION UI */
+.cave-active-session {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.timer-display {
+    font-size: 8rem;
+    font-weight: bold;
+    font-variant-numeric: tabular-nums;
+    z-index: 10;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.focus-dhikr {
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    opacity: 0.8;
+    z-index: 10;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Exit Button (Hidden unless hovered) */
+.exit-cave-btn {
+    position: fixed;
+    bottom: 30px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.5);
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.focus-cave-container.active:hover .exit-cave-btn {
+    opacity: 1;
+}
+
+/* Exit Modal */
+.exit-confirm-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(20, 20, 20, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    z-index: 100;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.exit-confirm-modal p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #ef4444;
+    /* Alert color for breaking focus */
+}
+
+.confirm-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.stay-btn {
+    background: #10b981;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.leave-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.6);
+    padding: 12px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.leave-btn:hover {
+    border-color: #ef4444;
+    color: #ef4444;
+}
